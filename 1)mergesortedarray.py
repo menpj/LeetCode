@@ -8,13 +8,28 @@ n=3
 j=0
 i=0
 index=0
+print("beginning:")
+print(nums1)
+print(nums2)
 while i<m or j<n:
     print(f"hello1 i:{i} j:{j}")
     if i<m and j<n:
         if nums1[i] > nums2[j]:
             temp=nums1[i]
             nums1[i]=nums2[j]
-            nums2[j]=temp
+            if(n-1==0):
+                nums2[j]=temp
+            for k in range(j,n-1):
+                if nums2[k+1]>=temp:
+                    print("nums2 element replaced")
+                    nums2[k]=temp
+                    break
+                else:
+                    if nums2[k+1]<temp:
+                        nums2[k]=nums2[k+1]
+                        nums2[k+1]=temp
+            
+                    
             i+=1
             index+=1
             print(nums1)
@@ -34,7 +49,7 @@ while i<m or j<n:
         print("execute this")
         print(f"hello2 i:{i} j:{j}")
         break
-print(nums1)
+print(f"answer {nums1}")
 print(nums2)
 
     
