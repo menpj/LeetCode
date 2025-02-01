@@ -15,7 +15,7 @@ class Solution(object):
         l,r=0,0
         #listND=[]
         #print(f"First Iteration: \nval: {val}")
-        while r < len(nums):
+        while r < len(nums):    
             count=1
             
             while (r+1)<len(nums) and nums[r]==nums[r+1]:
