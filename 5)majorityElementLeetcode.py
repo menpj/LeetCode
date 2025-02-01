@@ -9,10 +9,11 @@ class Solution(object):
         """
         counter={}
         for i in nums:
-            if i in counter:
+            '''if i in counter:
                 counter[i]+=1
             else:
-                counter[i]=1
+                counter[i]=1 '''
+            counter[i]=1+counter.get(i,0)
         #return max(counter,key=counter.get))
         maxValue=float('-inf')
         maxKey=None
