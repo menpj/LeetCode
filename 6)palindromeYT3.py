@@ -1,7 +1,7 @@
 #9. Palindrome Number
 #https://leetcode.com/problems/palindrome-number/description/?envType=study-plan-v2&envId=top-interview-150
 #https://www.youtube.com/watch?v=yubRKwixN-U inspired from this video but solution is not ideal
-
+#solution is not ideal
 class Solution(object):
     def palindrome(self,num) -> bool:
         
@@ -9,17 +9,21 @@ class Solution(object):
             print(f"{num} is not a Palindrome")
             return False
         temp=num
-        length= len(str(temp))
+        #length= len(str(temp))
+        length =1
+        while num>=length*10:
+            length*=10
         i=0
-        
-        while temp>0 and length>1:
-            if temp%10 == int(temp/(10**(length-1))):
+        print(length)
+        #while temp>0 and length>1:
+        while temp:
+            if temp%10 == temp//length:
                 #temp=temp%(10**length-1)
-                temp=temp%(10**(length-1))
-                temp=int(temp/10)
+                temp=(temp%length)//10
+            
                 
-                length-=2
-                #print(f"After iteration {temp} length: {length}")
+                length=length//100
+                print(f"After iteration {temp} length: {length}")
             else:
                 print(f"{num} is not a Palindrome")
                 return False
