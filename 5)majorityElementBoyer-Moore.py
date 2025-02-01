@@ -1,6 +1,6 @@
 #169. Majority Element
 #https://leetcode.com/problems/majority-element/description/?envType=study-plan-v2&envId=top-interview-150
-#This is the Boyer-Moore Voting Algorithm
+#This is the Boyer-Moore Voting Algorithm https://www.youtube.com/watch?v=7pnhv842keE
 class Solution(object):
     def majorityElement(self,nums):
         maxCount=float('-inf')
