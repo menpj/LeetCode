@@ -1,12 +1,12 @@
 #66. Plus One
-#my own solution
+#https://www.youtube.com/watch?v=iBk_JyxxuN8
 #https://leetcode.com/problems/plus-one/
-
-
+#this is an ideal solution based on youtube, way better than mine, less complex
 class Solution(object):
     def plusOne(self,digits):
         length=len(digits)
-        carry=1
+         
+    
         '''if digits[length-1]!=9:
             digits[length-1]+=1
             print(digits)
@@ -14,29 +14,15 @@ class Solution(object):
         
         else:'''
         for i in range(length-1,-1,-1):
-            if carry==0:
-                break
+            if digits[i]<9:
+                digits[i]+=1
+                return digits
             
-            elif carry==1 and i!=0:
-                if digits[i]==9:
-                
-                    digits[i]=0
-                else: 
-                    digits[i]+=1
-                    carry=0
-            elif carry==1 and i==0:
-                if digits[i]!=9:
-                    digits[i]+=1
-                    carry=0
-                else:
-                    digits[i]=0
-                    for j in range(length-1,-1,-1):
-                        if j==length-1:
-                            digits.append(digits[j])
-                        else:
-                            digits[j+1]=digits[j]
-                    digits[0]=1
-                    carry=0
+            digits[i]=0
+            
+        digits=[0 for _ in range(length+1)]
+        digits[0]=1
+        
         print(digits)
         return digits 
                 
