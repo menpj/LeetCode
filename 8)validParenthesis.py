@@ -1,10 +1,7 @@
 #20. Valid Parentheses
 #https://leetcode.com/problems/valid-parentheses/description/?envType=study-plan-v2&envId=top-interview-150
 
-#66. Plus One
-#https://www.youtube.com/watch?v=iBk_JyxxuN8
-#https://leetcode.com/problems/plus-one/
-#this is an ideal solution based on youtube, way better than mine, less complex
+
 class Solution(object):
     def validParentheses(self,parenthesis):
         #pass    
