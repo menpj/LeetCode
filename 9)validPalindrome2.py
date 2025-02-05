@@ -1,6 +1,6 @@
 #125. Valid Palindrome
 #https://leetcode.com/problems/valid-palindrome/description/?envType=study-plan-v2&envId=top-interview-150
-#not ideal but okay solution
+#not ideal but okay solution, this is the best  i could find
 import re
 
 class Solution(object):
