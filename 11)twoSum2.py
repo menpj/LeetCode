@@ -1,4 +1,5 @@
 #167. Two Sum II - Input Array Is Sorted
+#working but not very efficient
 class Solution(object):
     def twoSum(self, numbers, target):
         """
@@ -6,16 +7,23 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        print(numbers)
-        print(target)
+        #print(numbers)
+        #print(target)
         index=[]
-        for i,j in range(len(numbers)),range(0,len(numbers)):
-           
-            if i!=j and (numbers[i]+numbers[j])==target:
-                index.append(i+1)
-                index.append(j+1)
-                print(index)
-                return index
+        previous=-999
+        for i in range(len(numbers)):
+            if previous==numbers[i]:
+                continue
+            else:
+                previous=numbers[i]
+            for j in range(i+1,len(numbers)):
+                if (numbers[i]+numbers[j])>target:
+                    break
+                if (numbers[i]+numbers[j])==target:
+                    index.append(i+1)
+                    index.append(j+1)
+                    #print(index)
+                    return index
         
 def main():
     numbers=[]

@@ -1,4 +1,5 @@
 #167. Two Sum II - Input Array Is Sorted
+#take more than given time limit
 class Solution(object):
     def twoSum(self, numbers, target):
         """
@@ -9,13 +10,13 @@ class Solution(object):
         print(numbers)
         print(target)
         index=[]
-        for i,j in range(len(numbers)),range(0,len(numbers)):
-           
-            if i!=j and (numbers[i]+numbers[j])==target:
-                index.append(i+1)
-                index.append(j+1)
-                print(index)
-                return index
+        for i in range(len(numbers)):
+            for j in range(i,len(numbers)):
+                if i!=j and (numbers[i]+numbers[j])==target:
+                    index.append(i+1)
+                    index.append(j+1)
+                    print(index)
+                    return index
         
 def main():
     numbers=[]
