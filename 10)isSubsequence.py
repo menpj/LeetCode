@@ -1,3 +1,4 @@
+#this is an ideal solution
 class Solution(object):
     def isSubsequence(self, s, t):
         """
@@ -12,14 +13,13 @@ class Solution(object):
           if j<lens and s[j]==i:
               j+=1
               
-        if j==len(s):
+        if j==lens:
             #print("Sub sequence is present.")
             return True
             
         else:
             #print("Not present")
             return False
-        
         
         
 def main():
