@@ -15,19 +15,14 @@ class Solution(object):
         
             
             
+            cursum=numbers[i]+numbers[j]
             
-            
-            if (numbers[i]+numbers[j])==target:
-                index.append(i+1)
-                index.append(j+1)
-                print(index)
-                #print("index")
-                
-                return index
-            elif (numbers[i]+numbers[j])<target:
+            if cursum==target:
+                return [i+1,j+1]
+            elif cursum<target:
                 i+=1
                 #print("I incremented")
-            elif (numbers[i]+numbers[j])>target:
+            elif cursum>target:
                 j-=1
             
                     
