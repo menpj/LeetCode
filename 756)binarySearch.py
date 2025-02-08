@@ -1,4 +1,5 @@
 #704. Binary Search
+#https://www.youtube.com/watch?v=s4DPM8ct1pI
 class Solution(object):
     def search(self, nums, target):
         """
