@@ -33,7 +33,7 @@ class Solution(object):
             elif path_stack[i-pop_count]=='..':
                 #print("enetered")
                 
-                if ((i-pop_count)%len(path_stack))==0:
+                if (i-pop_count)==0:
                     del(path_stack[i-pop_count])
                     pop_count+=1
                     #print("enetered shit")
@@ -54,7 +54,7 @@ class Solution(object):
             
         if not s:
             s="/"
-        #print(s)
+        print(s)
         return s
                 
                 
