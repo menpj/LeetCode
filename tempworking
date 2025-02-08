@@ -1,65 +1,72 @@
+#71. Simplify Path
+
 class Solution(object):
-    def merge(self, nums1, m, nums2, n):
+    def simplifyPath(self, path):
         """
-        :type nums1: List[int]
-        :type m: int
-        :type nums2: List[int]
-        :type n: int
-        :rtype: None Do not return anything, modify nums1 in-place instead.
-        """ 
-        #https://leetcode.com/problems/merge-sorted-array/
-#88. Merge Sorted Array
-        #print("hello")
+        :type path: str
+        :rtype: str
+        """
+        path_stack=[]
+        #re.sub
+        s=""
+        for i in path:
+            if i=='/' and s:
+                path_stack.append(s)
+                s=""
+            elif i=='/':
+                pass
+    
+            else:
+                s=s+i
+        if s:
+            path_stack.append(s)
+        print(path_stack)
+        pop_count=0
+        #length=len(path_stack)
+        for i in range(len(path_stack)):
         
-        j=0
-        i=0
-        #index=0
-        #print("beginning:")
-        #print(nums1)
-        #print(nums2)
-        while i<m or j<n:
-            #print(f"hello1 i:{i} j:{j}")
-            if i<m and j<n:
-                if nums1[i] > nums2[j]:
-                    temp=nums1[i]
-                    nums1[i]=nums2[j]
-                    if(n-1==0):
-                        nums2[j]=temp
-                    for k in range(j,n-1):
-                        if nums2[k+1]>=temp:
-                            #print("nums2 element replaced")
-                            nums2[k]=temp
-                            break
-                        else:
-                            if nums2[k+1]<temp:
-                                nums2[k]=nums2[k+1]
-                                nums2[k+1]=temp
-                                
-                            
-                    i+=1
-                    #index+=1
-                    #print(nums1)
-                    #print(nums2)
-                else:
-                    i+=1
-            elif i>=m and j<n and i<m+n:
-                #temp=nums1[i]
-                nums1[i]=nums2[j]
-                #nums2[j]=temp
-                j+=1
-                i+=1
-                #index+=1
-                #print(nums1)
-                #print(nums2)
-            elif i<m and j>=n:
-                #print("execute this")
-                #print(f"hello2 i:{i} j:{j}")
-                break
-        #print("answer:")
-        #print(nums1)
-        #print(nums2)
-
             
-
-                        
+            
+            
+            if (i+1-pop_count)<len(path_stack) and path_stack[i+1-pop_count]=='..':
+                #print(f"gonna be deleetd {path_stack[i-pop_count]}")
+                path_stack[i-pop_count]=None
+                path_stack[i+1-pop_count]=None
+                #print(f"gonna be deleetd {path_stack[i-pop_count]}")
+                #del(path_stack[i-pop_count])
+                #pop_count+=1
+                print("\nrandom")
+                print(path_stack)
                 
+            elif (i+1-pop_count)<len(path_stack) and path_stack[i+1-pop_count]=='.':
+                print("\nrandom2")
+                path_stack[i+1-pop_count]=None
+                #pop_count+=1
+            elif (i-pop_count)<len(path_stack) and path_stack[i-pop_count]=='..':
+                print("\nenetered")
+                path_stack[i-pop_count]=None
+                #pop_count+=1
+            
+            
+        
+        print(path_stack)
+        s=""
+        for i in path_stack:
+            if i:
+                s=s+"/"+i
+            
+        if not s:
+            s="/"
+        print(s)
+        return s
+            
+                
+                
+        
+        
+def main():
+    solution = Solution()
+    path=input("Enter the string path: ")
+    solution.simplifyPath(path)
+
+main()
