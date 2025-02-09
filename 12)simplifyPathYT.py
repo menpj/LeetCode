@@ -1,7 +1,7 @@
 #71. Simplify Path
 #https://www.youtube.com/watch?v=qYlHrAKJfyA
 
-#not ideal solution
+#ideal solution
 
 
 
