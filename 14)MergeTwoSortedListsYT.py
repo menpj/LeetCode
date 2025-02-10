@@ -1,7 +1,6 @@
 #21. Merge Two Sorted Lists
- 
+#this is a YouTube based solution 
 # Definition for singly-linked list.
-#not working
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
@@ -18,55 +17,32 @@ class Solution(object):
         :type list2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        kk=list1
-        ll=list2
+        ll=list1
+        kk=list2
         
-        
-        head=ll
-        if ll and kk:
-            if ll.val <= kk.val:
-                ll=ll.next
-            else:
-                temp=head
-                head=kk
-                kk=kk.next
-        elif kk:
-            temp=head
-            head=kk
-            kk=kk.next
-        elif ll:
-            temp = ListNode(ll.val)
-            m.next=temp
-            m=m.next
-            ll=ll.next
+        dummy = ListNode()
+        tail=dummy
         #m=ListNode()
-        while ll or kk:
-            if ll and kk:
-                if ll.val <= kk.val:
-                    current=ll
-                    ll=ll.next
-                else:
-                    temp=current
-                    current=
-                    current.next=temp
-                    m=m.next
-                    kk=kk.next
-            elif kk:
-                temp = ListNode(kk.val)
-                m.next=temp
-                m=m.next
-                kk=kk.next
-            elif ll:
-                temp = ListNode(ll.val)
-                m.next=temp
-                m=m.next
+        while ll and kk:
+            
+            if ll.val <= kk.val:
+                
+                tail.next = ll
                 ll=ll.next
             else:
-                break
+                
+                tail.next=kk
+                kk=kk.next
+            tail=tail.next
+        if kk:
+            tail.next=kk
+        elif ll:
+            tail.next=ll
+    
         
         #merged.print_list()
-        self.print_list(head)
-        return head
+        self.print_list(dummy.next)
+        return dummy.next
     
     def print_list(self,List):
         current_node= List
