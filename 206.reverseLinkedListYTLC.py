@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.next = next
 #https://www.youtube.com/watch?v=G0_I-ZF0S38
+#ideal soution cleaner and better than mine
 class Solution(object):
     def reverseList(self, head):
         """

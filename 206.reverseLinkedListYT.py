@@ -5,7 +5,7 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-#YT SOLUTION
+#YT SOLUTION ideal solution, cleaner and better than mine
 #https://www.youtube.com/watch?v=G0_I-ZF0S38
 class ListNode(object):
     def __init__(self, val=0, next=None):
