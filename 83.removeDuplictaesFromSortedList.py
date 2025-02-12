@@ -1,13 +1,11 @@
 #https://leetcode.com/problems/reverse-linked-list/?envType=study-plan-v2&envId=leetcode-75
-#Youtube based solution not ideal,iterative approach is better
-#https://www.youtube.com/watch?v=G0_I-ZF0S38
+
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-#YT SOLUTION ideal solution, cleaner and better than mine
-#https://www.youtube.com/watch?v=G0_I-ZF0S38
+
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
@@ -18,20 +16,29 @@ class ListNode(object):
         
     
 class Solution(object):
-    def reverseList(self, head):
+    def deleteDuplicates(self, head):
         """
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
         
-        if not head:
-            return None
-        newhead=head
-        if head.next:
-            newhead= self.reverseList(head.next)
-            head.next.next=head
-        head.next=None
-        return newhead
+        slow,fast=None,head
+        #previous=slow
+        while fast:
+            if slow and slow.val==fast.val:
+                slow.next=fast.next
+                fast=fast.next
+            else:
+                slow=fast
+                fast=fast.next
+            '''tfn=fast.next
+            fast.next=slow
+            slow=fast
+            fast=tfn'''
+        
+        #head=slow
+        self.print_list(head)
+        return head
             
         
         
@@ -46,7 +53,7 @@ class Solution(object):
 def main():
     
     l1 = ListNode(1)
-    l2 = ListNode(2)
+    l2 = ListNode(1)
     l1.next=l2
 
     l3 = ListNode(4,None)
@@ -57,6 +64,6 @@ def main():
     
     
     solution = Solution()
-    head=solution.reverseList(l1)
-    solution.print_list(head)
+    solution.deleteDuplicates(l1)
+    
 main()
