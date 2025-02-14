@@ -1,6 +1,6 @@
 #383. Ransom Note
 #https://leetcode.com/problems/ransom-note/description/?envType=study-plan-v2&envId=top-interview-150
-#my solution not ideal
+#not ideal solution nnbut best so far
 class Solution(object):
     def canConstruct(self, ransomNote, magazine):
         """
@@ -8,20 +8,18 @@ class Solution(object):
         :type magazine: str
         :rtype: bool
         """
-        map={}
-        for c in magazine:
-            if c in map:
-                map[c]=map[c]+1
-            else:
-                map[c]=1
-        
+        charlist=list(magazine)
         for i in ransomNote:
-            if map[i]:
-                if map[i]>1:
-                    map[i]-=map[i]
-                else:
-                    map.pop(i)
+             
+            
+            if i in charlist:
+                charlist.remove(i)
+                
+                #print(magazine)
             else:
                 return False
+                  
+                #print(magazine)
+            
         return True
         

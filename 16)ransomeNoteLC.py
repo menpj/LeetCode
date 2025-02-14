@@ -8,19 +8,10 @@ class Solution(object):
         :type magazine: str
         :rtype: bool
         """
-        map={}
-        for c in magazine:
-            if c in map:
-                map[c]=map[c]+1
-            else:
-                map[c]=1
-        
         for i in ransomNote:
-            if map[i]:
-                if map[i]>1:
-                    map[i]-=map[i]
-                else:
-                    map.pop(i)
+            if i in magazine:
+                magazine=magazine.replace(i,'',1)
+                #print(magazine)
             else:
                 return False
         return True

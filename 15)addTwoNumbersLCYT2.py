@@ -21,37 +21,20 @@ class Solution(object):
         while l1 or l2:
             add=carry
             if l1:
-
                 add+=l1.val
                 l1=l1.next
             if l2:
                 add+=l2.val
                 l2=l2.next
-                
-            
-            
-            
-            
             if add>=10:
                 carry=1
-                add=add%10
-                
-            else:
-                
+                add=add%10   
+            else:   
                 carry=0
-            
-
             curr.next=ListNode(add)
-            
             curr=curr.next
-            
-                
-        
         if carry==1:
             curr.next=ListNode(1)
-            
-            
-
         return dummy.next     
 
         
