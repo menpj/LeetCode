@@ -20,7 +20,8 @@ class Solution(object):
                 
 
                 charlist=charlist.replace(tcharlist[i-popcount],"",1)
-                tcharlist=tcharlist[:i-popcount]+tcharlist[i-popcount+1:]
+                #tcharlist=tcharlist[:i-popcount]+tcharlist[i-popcount+1:]
+                tcharlist=tcharlist.replace(tcharlist[i-popcount],"",1)
                 popcount+=1
                 #print(magazine)
             else:
