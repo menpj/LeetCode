@@ -1,80 +1,44 @@
-#71. Simplify Path
-
+#import operator
+from collections import OrderedDict
 class Solution(object):
-    def simplifyPath(self, path):
+    def groupAnagrams(self, strs):
         """
-        :type path: str
-        :rtype: str
+        :type strs: List[str]
+        :rtype: List[List[str]]
         """
-        path_stack=[]
-        #re.sub
-        s=""
-        for i in path:
-            if i=='/' and s:
-                path_stack.append(s)
-                s=""
-            elif i=='/':
-                pass
-    
+        #popcount=0
+        empty_group=[]
+        map={}
+        for i in strs:
+            #if i=="":
+
+            map[i]=''.join(sorted(i))
+            
+        #print(map)
+        #map=dict(sorted(map.items(),key=lambda item:item[1]))
+        #sorted_dict = dict(sorted(map.items(), key=operator.itemgetter(1)))
+        map = OrderedDict(sorted(map.items(), key=lambda item: item[1]))
+        #print(sorted_dict)
+        print(map)
+        grouplist=[]
+        subgroup=[]
+        curr=None
+        for i in map:
+            
+            if curr==map[i]:
+                subgroup.append(i)
+                
             else:
-                s=s+i
-        if s:
-            path_stack.append(s)
-        print(path_stack)
-        pop_count=0
-        #length=len(path_stack)
-        for i in range(len(path_stack)):
-        
-            
-            
-            if (i+1-pop_count)<len(path_stack) and path_stack[i+1-pop_count]=='..':
-                print(f"\ngonna be deleetd {path_stack[i-pop_count]}")
-                del(path_stack[i-pop_count])
-                #print(f"gonna be deleetd {path_stack[i-pop_count]}")
-                del(path_stack[i-pop_count])
-                pop_count+=2
-                print("random")
-                print(path_stack)
+                if subgroup:
+                    #print(subgroup)
+                    grouplist.append(subgroup)   
+                subgroup=[]
                 
-            elif (i+1-pop_count)<len(path_stack) and path_stack[i+1-pop_count]=='.':
-                print("\nrandom2")
-                del path_stack[i+1-pop_count]
-                pop_count+=1
+                subgroup.append(i)
+            #print(i+":" + map[i])
+            curr=map[i]
+        if subgroup:
+            grouplist.append(subgroup)
             
-            elif (i-pop_count)<len(path_stack) and path_stack[i-pop_count]=='..':
-                print("\nenetered")
-                del path_stack[i-pop_count]
-                pop_count+=1
-            
-            
-        
-        print(path_stack)
-        s=""
-        for i in path_stack:
-            s+="/"
-            s+=i
-        if not s:
-            s="/"
-        print(s)
-        return s
-            
-                
-                
-        
-        
-def main():
-    solution = Solution()
-    path=input("Enter the string path: ")
-    solution.simplifyPath(path)
-
-main()
-
-elif path_stack[i-pop_count]=='..':
-                while True:
-                    if i-1-pop_count-count!=0 and path_stack[i-1-pop_count-count]==None:
-                        count+=1
-                        print("enetert")
-                    else:
-                        del(path_stack[i-count-pop_count])
-                        pop_count+=1
-                        count=0
+        #print(grouplist)
+        return grouplist
