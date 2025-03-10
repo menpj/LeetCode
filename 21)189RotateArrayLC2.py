@@ -1,3 +1,4 @@
+#my soution working soution but not accepeted in lc
 class Solution(object):
     def rotate(self, nums, k):
         """
@@ -8,11 +9,11 @@ class Solution(object):
         size=len(nums)
         k=k%size
         
-        '''nums=nums[size-k:]+nums[:size-k]
+        nums=nums[size-k:]+nums[:size-k]
         print("nums is:")
-        print(nums)'''
+        print(nums)
 
-        if nums:
+        '''if nums:
             for i in range(k):
                 
             
@@ -25,4 +26,4 @@ class Solution(object):
                     temp=temp2
             
 
-        #print(nums)
+        #print(nums)'''
