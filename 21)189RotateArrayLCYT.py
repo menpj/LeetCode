@@ -1,4 +1,5 @@
-#working yt inspired solution but not ideal
+#working yt based solution but not ideal
+#https://www.youtube.com/watch?v=BHr381Guz3Y
 class Solution(object):
     def rotate(self, nums, k):
         """
