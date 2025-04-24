@@ -25,4 +25,4 @@ class Solution(object):
             except KeyError:
                 pass
                 
-            i+=1
+            i+=1 
