@@ -1,6 +1,7 @@
 #128. Longest Consecutive Sequence
 #https://leetcode.com/problems/longest-consecutive-sequence/
 #my solution, O(n) time complexity, but taking more runtime than earlier, clean solution
+#https://www.youtube.com/watch?v=P6RZZMu_maU
 class Solution(object):
     def longestConsecutive(self, nums):
         """
