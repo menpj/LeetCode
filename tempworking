@@ -1,28 +1,24 @@
 #128. Longest Consecutive Sequence
 #https://leetcode.com/problems/longest-consecutive-sequence/
-#my solution, not ideal 
+#my solution, O(n) time complexity, but taking more runtime than earlier, clean solution
 class Solution(object):
     def longestConsecutive(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        #nums.sort()
-        #print(nums)
-        bigSequence=1
-        #curSequence=1
-        size=len(nums)
+       
+        bigSequence=0
         
         
-        hashMap= {item:index for index,item in enumerate(nums)}
-        hsize=len(hashMap)
-        if hsize==0:
-            return 0
-        '''if hsize==1:
-            return 1'''
-        #print(hashMap)
-        for i in range(size):
-            val=nums[i]+1
+        
+        hashMap= set(nums)
+        #hsize=len(hashMap)
+        
+        
+        for i in hashMap.copy():
+            
+            val=i
             
             curSequence=0
             while True:
@@ -31,13 +27,15 @@ class Solution(object):
                         val=val-1
                         continue
                     curSequence+=1
-                    #print(val)
-                    hashMap.pop(val)
+                    
+                    hashMap.remove(val)
                     val+=1
                     
                 else:
                     break
+          
             if curSequence>bigSequence:
                 bigSequence=curSequence
+        
         return bigSequence
         
