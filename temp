@@ -1,28 +1,94 @@
 class Solution(object):
-    def rotate(self, nums, k):
+    def merge(self, intervals):
         """
-        :type nums: List[int]
-        :type k: int
-        :rtype: None Do not return anything, modify nums in-place instead.
+        :type intervals: List[List[int]]
+        :rtype: List[List[int]]
         """
-        size=len(nums)
-        k=k%size
+        size=len(intervals)
+        sub=0
+        intervals.sort()
+        print(intervals)
+        interval=[]
+        flag=False
+        while sub<size:
+            #if sub<size-1 and size>1:
+            if sub<size-1:
+                if intervals[sub][1]>=intervals[sub+1][0]:
+                    #print("test")
+                    #print(flag)
+                    if flag:
+                        #print("initialted")
+                        #print(sub)
+                        #print(flag)
+                        if interval[len(interval)-1][1]<=intervals[sub+1][1]:
+                        #if intervals[sub][1]<=intervals[sub+1][1]:
+                            interval[len(interval)-1][1]=intervals[sub][1]
+                            print("here")
+                            print(interval)
+                        #if intervals[sub][0]>=intervals[sub+1][0]:
+                    else:
+                        print("initialted")
+
+                        if intervals[sub][1]<=intervals[sub+1][1]:
+                            new=[intervals[sub][0],intervals[sub+1][1]]
+                            #flag=True
+                            #sub=sub+1
+                            print("here")
+                            print(interval)
+                        else:
+                            new=[intervals[sub][0],intervals[sub][1]]
+                            #flag=False
+                            print("here2")
+                            print(interval)
+                        flag=True
+                        interval.append(new)
+                        print(interval)
+                        
+                        #sub+=1
+                else:
+                    if flag:
+                        if interval[len(interval)-1][1]<=intervals[sub+1][1]:
+                        #if intervals[sub][1]<=intervals[sub+1][1]:
+                            #print('gonna')
+                            
+                            interval[len(interval)-1][1]=intervals[sub][1]
+
+                            #print(interval)
+                    else:
+                        if interval[len(interval)-1][1]<=intervals[sub][1]:
+                            interval.append(intervals[sub])
+                        print("here2")
+                        print(interval)
+                        #flag=False
+                    flag=False
+            else:
+                #new=[intervals[sub][0],intervals[sub][1]]
+                #interval.append(new)
+                #print("entered")
+                if flag:
+                    #print("flag true")
+                    #print(interval)
+                    #print(sub)
+                    #if interval[len(interval)-1][1]<=intervals[sub+1][1]:
+                    if interval[len(interval)-1][1]<=intervals[sub][1]:
+                    #if intervals[sub-1][1]<=intervals[sub][1]:
+                        #print("innit")
+                       
+                        interval[len(interval)-1][1]=intervals[sub][1]
+                else:
+                    #print("flag false")
+                    #print(interval)
+                    if interval[len(interval)-1][1]<=intervals[sub][1]:
+                        new=[intervals[sub][0],intervals[sub][1]]
+                        #print(interval)
+                        #print("rocking")
+                        interval.append(new)
+                        #print(interval)
+                        flag=True
+                    #print(interval)
+                
+                    
+            sub=sub+1
+        return interval
+
         
-        '''nums=nums[size-k:]+nums[:size-k]
-        print("nums is:")
-        print(nums)'''
-
-        if nums:
-            for i in range(k):
-                
-            
-                
-                temp=nums[0]
-                for k in range(size):
-
-                    temp2=nums[(k+1)%size]
-                    nums[(k+1)%size]=temp
-                    temp=temp2
-            
-
-        #print(nums)
