@@ -1,3 +1,8 @@
+#https://leetcode.com/problems/merge-intervals/
+#56. Merge Intervals
+#yt soution, optimal
+#https://www.youtube.com/watch?v=IexN60k62jo
+#minor performance improvement done yt video
 class Solution(object):
     def merge(self, intervals):
         """

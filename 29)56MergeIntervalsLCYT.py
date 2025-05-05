@@ -1,6 +1,6 @@
 #https://leetcode.com/problems/merge-intervals/
 #56. Merge Intervals
-#my soution, not optimal
+#yt soution, optimal
 #https://www.youtube.com/watch?v=44H3cEC2fFM
 #minor performance improvement done yt video
 class Solution(object):
