@@ -2,6 +2,7 @@
 #56. Merge Intervals
 #my soution, not optimal
 #https://www.youtube.com/watch?v=44H3cEC2fFM
+#minor performance improvement done yt video
 class Solution(object):
     def merge(self, intervals):
         """
@@ -17,11 +18,11 @@ class Solution(object):
         
         
         while sub<size:
-           
-            if interval[-1][1]>=intervals[sub][0] and interval[-1][1]<=intervals[sub][1]:
+            lastVal=interval[-1][1]
+            if lastVal>=intervals[sub][0] and lastVal<=intervals[sub][1]:
                 
                 interval[-1][1]=intervals[sub][1]
-            elif interval[-1][1]<intervals[sub][0]:
+            elif lastVal<intervals[sub][0]:
                 newlist=[intervals[sub][0],intervals[sub][1]]
                 interval.append(newlist) 
                
