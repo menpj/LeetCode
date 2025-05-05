@@ -17,10 +17,10 @@ class Solution(object):
         
         while sub<size:
            
-            if interval[len(interval)-1][1]>=intervals[sub][0] and interval[len(interval)-1][1]<=intervals[sub][1]:
+            if interval[-1][1]>=intervals[sub][0] and interval[-1][1]<=intervals[sub][1]:
                 
-                interval[len(interval)-1][1]=intervals[sub][1]
-            elif interval[len(interval)-1][1]<intervals[sub][0]:
+                interval[-1][1]=intervals[sub][1]
+            elif interval[-1][1]<intervals[sub][0]:
                 newlist=[intervals[sub][0],intervals[sub][1]]
                 interval.append(newlist) 
                
