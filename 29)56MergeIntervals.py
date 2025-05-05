@@ -1,6 +1,7 @@
 #https://leetcode.com/problems/merge-intervals/
 #56. Merge Intervals
 #my soution, not optimal
+#https://www.youtube.com/watch?v=44H3cEC2fFM
 class Solution(object):
     def merge(self, intervals):
         """
@@ -9,7 +10,7 @@ class Solution(object):
         """
         size=len(intervals)
         sub=1
-        intervals.sort()
+        intervals.sort(key= lambda i:i[0])
         
         if size>=1:
             interval=[intervals[0]]
