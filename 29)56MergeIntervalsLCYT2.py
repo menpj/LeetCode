@@ -13,9 +13,7 @@ class Solution(object):
         
         intervals.sort(key= lambda i:i[0])
         
-        '''if size>=1:
-            interval=[intervals[0]]
-        '''
+     
         interval=[]
         for start,end in intervals:
             #interval[-1][1]
