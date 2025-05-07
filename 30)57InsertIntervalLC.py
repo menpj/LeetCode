@@ -1,6 +1,3 @@
-#57. Insert Interval
-#https://leetcode.com/problems/insert-interval/
-#my solution optimal solution
 class Solution(object):
     def insert(self, intervals, newInterval):
         """
@@ -26,7 +23,7 @@ class Solution(object):
                     '''if newInterval[1]<start:
                         flag=True
                         continue'''
-                elif newInterval[0]<start and newInterval[1]<start:
+                elif newInterval[1]<start:
                     interval.append(newInterval)
                     #print("entered")
                     #print(newInterval)
