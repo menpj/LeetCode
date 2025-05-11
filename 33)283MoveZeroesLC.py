@@ -1,7 +1,6 @@
 #283. Move Zeroes
 #https://leetcode.com/problems/move-zeroes/
-#283. Move Zeroes
-#https://leetcode.com/problems/move-zeroes/
+#MY SOLUTION,NOT CLEAN , OKAY ONE
 class Solution(object):
     def moveZeroes(self, nums):
         """
