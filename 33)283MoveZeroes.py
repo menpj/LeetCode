@@ -1,5 +1,7 @@
 #283. Move Zeroes
 #https://leetcode.com/problems/move-zeroes/
+#283. Move Zeroes
+#https://leetcode.com/problems/move-zeroes/
 class Solution(object):
     def moveZeroes(self, nums):
         """
@@ -9,7 +11,8 @@ class Solution(object):
         zeroP=0
         nonZP=0
         size=len(nums)
-        while zeroP<size and nonZP<size:
+        #while zeroP<size and nonZP<size:
+        while True:
             while zeroP<size and nums[zeroP]!=0:
                 zeroP+=1
             while nonZP<size and nums[nonZP]==0:
