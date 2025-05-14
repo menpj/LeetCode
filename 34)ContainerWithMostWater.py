@@ -1,5 +1,6 @@
 #11. Container With Most Water
 #my solution, okay solution, best so far
+#arrived on it based on hints in lc
 class Solution(object):
     def maxArea(self, height):
         """
