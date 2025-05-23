@@ -1,10 +1,13 @@
+#15. 3Sum
+#https://leetcode.com/problems/3sum/
+#solution working, my solution, but time limit exceeded so not working in leetcode
 class Solution(object):
     def threeSum(self, nums):
         """
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        #nums.sort()
+        nums.sort()
         #rmCount=0
         hashMap={value:index for index,value in enumerate(nums)}
         result=[]
