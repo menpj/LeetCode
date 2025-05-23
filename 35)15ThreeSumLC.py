@@ -1,6 +1,6 @@
 #15. 3Sum
 #https://leetcode.com/problems/3sum/
-#solution working, my solution, but time limit exceeded so not accepted in leetcode
+#solution working, my solution, but time limit exceeded so not accepted in leetcode,testcases passed in lc
 class Solution(object):
     def threeSum(self, nums):
         """
