@@ -4,43 +4,59 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        nums.sort()
-        rmCount=0
-        hashMap={value:index for index,value in enumerate(nums)}
-        result=[]
-        for i in range(len(hashMap)):
-                try:
-                    target=0-nums[i-rmCount]
-                except IndexError:
-                    break
-                for j in range(i-rmCount+1,len(hashMap)):
-                    try:
-                        curTarget=target-nums[j]
-                    except IndexError:
-                        break
-                    if curTarget in hashMap:
-                        #print("shit")
-                        curList=[nums[i],nums[j],curTarget]
-                        curList.sort()
-                        if curList not in result:
-                            result.append(curList)
-                        '''try:
-                            #del hashMap[nums[i]]
+        
+        
 
-                            #del hashMap[nums[j]]
-                        except KeyError:
-                            pass'''
-                        #del hashMap[curTarget]
-                        #print(nums)
-                        #del nums[i-rmCount]
-                        #nums.remove(nums[i-rmCount])
-                        #nums.remove(nums[j])
-                        #del nums[j-1]
-                        #print(nums)
+        size=len(nums)
+        result=[]
+        nums.sort()
+        
+        for i in range(size):
+            
+            target=0-nums[i]
+            left=0
+            right=size-1
+            #print("shit")
+            while left!=right:
+                #print("shit")
+                curval=nums[left]+nums[right] 
+                
+                '''
+                print(nums)
+                print(curval)
+                print(target)
+                print(":")
+                print(i)
+                print(left)
+                print(right)
+                '''
+                if  curval==target and i!=left and i!=right:
+                    curList=[nums[i],nums[left],nums[right]]
+                    curList.sort()
+                    print("in here")
+                    if curList not in result:
+                        result.append(curList)
+                       
+                    else:
+                        right=right-1
                         
-                        #print(curTarget)
-                        #nums.remove(curTarget)
-                        #rmCount+=1
+                        #left=left+1
+                        
+                elif curval==target and i==left:
+                    print("loope")
+                    left=left+1
+                elif curval==target and i==right:
+                    right=right-1
+                    print("l2")
+                elif curval<target:
+                    left=left+1
+                    print("l3")
+                    print(left)
+                elif curval>target:
+                    print("l4")
+                    print(right)
+                    right=right-1
+                 
         return result
         
-        #print(hashMap)
+        
