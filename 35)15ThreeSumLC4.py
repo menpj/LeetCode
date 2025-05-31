@@ -1,5 +1,5 @@
 #https://leetcode.com/problems/3sum/
-#yt based solution, not optimal, but best so far
+#yt based solution, not optimal, but best so far, slight improvement over previous
 #https://www.youtube.com/watch?v=jzZsG8n2R9A
 #https://www.youtube.com/watch?v=DhFh8Kw7ymk
 class Solution(object):
