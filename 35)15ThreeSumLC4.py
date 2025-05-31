@@ -41,7 +41,7 @@ class Solution(object):
                     
                     right=right-1
 
-                elif  curval==0 and i!=left and i!=right:
+                elif  curval==0:
                     curList=[nums[i],nums[left],nums[right]]
                     result.append(curList)
                     left+=1
