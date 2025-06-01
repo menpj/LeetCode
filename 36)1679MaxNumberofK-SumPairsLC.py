@@ -10,7 +10,6 @@ class Solution(object):
         size=len(nums)
         left=0
         right=size-1
-        hashMap={}
         nums.sort()
         count=0
         while left<right:
@@ -28,12 +27,8 @@ class Solution(object):
             elif k<val:
                 right-=1
             else:
-                if left not in hashMap and right not in hashMap:
-                    count+=1
-                    hashMap[left]=nums[left]
-                    hashMap[right]=nums[right]
-                    left+=1
-                    right-=1
+                
+                count+=1
+                left+=1
+                right-=1
         return count
-    
-    
