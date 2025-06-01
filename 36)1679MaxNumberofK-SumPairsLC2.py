@@ -9,10 +9,13 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
+        
+        #print(counterN)
         count=0
         hashMap={}
         for _,value in enumerate(nums):
-            hashMap[value]=hashMap.get(value,0)+1  
+            hashMap[value]=hashMap.get(value,0)+1
+        #hashMap=Counter(nums)  
         for key,qty in hashMap.items():
             target=k-key
             if target in hashMap:
@@ -20,7 +23,7 @@ class Solution(object):
                 if target!=key:
                     count+=min(hashMap[key],hashMap[target])
                 else:
-                    count+=(hashMap[key]/2)//1
+                    count+=(hashMap[key]//2)
                 del hashMap[key]
                 '''if key!=target:
                     del hashMap[target]'''
