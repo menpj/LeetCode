@@ -1,4 +1,5 @@
 #my solution, chatgpt inspired solution when stuck
+#https://leetcode.com/problems/min-stack/
 class MinStack(object):
     
     
