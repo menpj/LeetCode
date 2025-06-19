@@ -1,62 +1,17 @@
-class Solution(object):
-    def threeSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-        
-        
-
-        size=len(nums)
-        result=[]
-        nums.sort()
-        
-        for i in range(size):
-            
-            target=0-nums[i]
-            left=0
-            right=size-1
-            #print("shit")
-            while left!=right:
-                #print("shit")
-                curval=nums[left]+nums[right] 
-                
-                '''
-                print(nums)
-                print(curval)
-                print(target)
-                print(":")
-                print(i)
-                print(left)
-                print(right)
-                '''
-                if  curval==target and i!=left and i!=right:
-                    curList=[nums[i],nums[left],nums[right]]
-                    curList.sort()
-                    print("in here")
-                    if curList not in result:
-                        result.append(curList)
-                       
-                    else:
-                        right=right-1
-                        
-                        #left=left+1
-                        
-                elif curval==target and i==left:
-                    print("loope")
-                    left=left+1
-                elif curval==target and i==right:
-                    right=right-1
-                    print("l2")
-                elif curval<target:
-                    left=left+1
-                    print("l3")
-                    print(left)
-                elif curval>target:
-                    print("l4")
-                    print(right)
-                    right=right-1
-                 
-        return result
-        
+class Solution:
+    # @param n, an integer
+    # @return an integer
+    def reverseBits(self, n):
+        print("{}".format(n))
+        #print(type(n))
+        multiple=1
+        c=0
+        while n>0:
+            #a1=a%2
+            #sum=n%2
+            c=(n%10)+10*c
+            multiple=multiple*10
+            n=n//10
+        print(c)
+        return c
         
