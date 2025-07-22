@@ -1,4 +1,4 @@
-#my solution, okay solution, not ideal
+#my youtube absed solution, okay solution, not ideal
 #https://leetcode.com/problems/counting-bits/
 #338. Counting Bits 
 class Solution(object):
